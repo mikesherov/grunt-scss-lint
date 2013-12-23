@@ -52,7 +52,7 @@ exports.init = function (grunt) {
 
   exports.lint = function (files, options, done) {
     var args = [],
-        config = options['config'],
+        config = options.config,
         exec = require('child_process').exec,
         child;
 
@@ -76,7 +76,7 @@ exports.init = function (grunt) {
         return done(false);
       }
 
-      writeReport(options['reporterOutput'], results);
+      writeReport(options.reporterOutput, results);
 
       done(results);
     });
